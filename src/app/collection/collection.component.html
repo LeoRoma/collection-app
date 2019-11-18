@@ -1,11 +1,12 @@
 <div class="row-xs-12">
   <div class="col-xs-12">
-    <ul class="list-group">
-      <li class="list-group-item">
-        <span class="badge badge-pill badge-secondary float-right m-2">Photo</span>
-        <button class="btn btn-danger">Remove from Collection</button>&nbsp;
-        Anything
+    <ul class="list-group" *ngIf="collectedItems.length">
+      <li class="list-group-item" *ngFor="let item of collectedItems">
+        <span class="badge badge-pill badge-secondary float-right m-2">{{ item.type }}</span>
+        <button class="btn btn-danger" (click)="onRemoveFromCollection(item)">Remove from Collection</button>&nbsp;
+        {{ item.description }}
       </li>
     </ul>
+    <h3 *ngIf="collectedItems.length === 0">Start Adding Items to Your Collection on the Market!</h3>
   </div>
 </div>
