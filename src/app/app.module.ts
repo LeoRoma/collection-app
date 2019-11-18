@@ -5,17 +5,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MarketComponent } from './market/market.component';
 import { CollectionComponent } from './collection/collection.component';
-import { CollectableService } from "./shared/collectable.service"
+import { CollectableService } from "./shared/collectable.service";
+import { HeaderComponent } from './header.component'
+import { routing } from './app.routing';
 
 @NgModule({
   declarations: [
     AppComponent,
     MarketComponent,
-    CollectionComponent
+    CollectionComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    routing 
   ],
   providers: [CollectableService],
   bootstrap: [AppComponent]
